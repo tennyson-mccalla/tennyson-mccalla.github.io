@@ -15,8 +15,7 @@ Initially the plan for this enhancement was to capture the Celsius scale tempera
 Instead of being lost forever after being transmitted over UART the sensor information and variable values are now captured for longterm use and perusal in a file. For some reason the code used to work without all of the calls to DISPLAY I placed in the mainThread but it seems that they are now necessary in order for the loop not to get stuck. The [CSV file]({{site.url}}/database_stuff/temps_outfile.csv) forms an essential part of the Database artifact.
 
 ```c
-/*
- * Copyright (c) 2015-2020, Texas Instruments Incorporated
+ /* Copyright (c) 2015-2020, Texas Instruments Incorporated
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
