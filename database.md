@@ -10,11 +10,11 @@ Rather than a direct export of raw sensor data to the database I'd employ an ind
 
 ![UART output]({{site.url}}/media/Screen%20Recording%202022-02-25%20at%2015.56.31.mov)
 
-![Watch the CSV file grow]({{site.url}}/media/Screen%20Recording%202022-02-25%20at%2015.56.31.mov)
+![Watch the CSV file grow]({{site.url}}/media/Screen%20Recording%202022-02-25%20at%2015.57.50.mov)
 
 Once [the CSV/text]({{site.url}}/database_stuff/temps_outfile.csv) file was big enough for my tastes I went about importing it into mongoDB. I previously went into the mongo shell (mongosh) and created a db and collection (both called ti_temps) and performed a test insert of a single document. MongoDB apparently will not show the database in the "show dbs" list until some data has been added to it. After that I left the mongosh and used mongoimport as in the screenshot below:
 
-![Show dbs and mongoimport]({{site.url}}/media/'Screen Shot 2022-02-25 at 16.07.18.png')
+![Show dbs and mongoimport]({{site.url}}/media/Screen%20Shot%202022-02-25%20at%2016.07.18.png)
 
 The other alteration was to customize an old Python pyMongo class for use with this new db/collection/authentication:
 
