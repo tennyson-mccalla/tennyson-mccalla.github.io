@@ -21,3 +21,8 @@ I designed and evaluated computing solutions that solve a given problem using al
 I demonstrated an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals by completing the embedded systems project which involved working with the C programming language, microsecond precise timers, as well as hardware interfaces like GPIO, I2C, and UART.
 
 And finally I developed a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources by completing the database section of this capstone course where I took advantage of the authentication tools offered by MongoDB.
+
+Code Review
+[Code Review](https://tennyson-mccalla.github.io/code_review.md)
+
+Artifact Enhancements
