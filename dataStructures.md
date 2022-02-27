@@ -2,7 +2,7 @@
 
 ## Narrative
 
-This artifact is almost wholly original though it was definitely inspired by [the animal shelter project](https://github.com/tennyson-mccalla/CS-340-Stuff/blob/main/Final_Dash.ipynb) that incorporated MongoDB database software and Plotly dashboard software.
+This artifact is almost wholly original though it was definitely inspired by [the animal shelter project]({{site.url}}/Plotly_Dash_stuff/Final_Dash.ipynb) that incorporated MongoDB database software and Plotly dashboard software.
 
 The idea behind this was to create a better thermostat demo. The [TI board](https://www.ti.com/tool/CC3220SF-LAUNCHXL) (via I2C) delivered temperature information (every 200 ms), the information was put out as an appended row to a [CSV file]({{site.url}}/database_stuff/temps_outfile.csv) (every 1000 ms), and then in here that last line gets parsed and has its values used for the thermostat display (every 1000 ms). The algorithm here keeps things constantly flowing. See a demonstration of the flow in the video below:
 
