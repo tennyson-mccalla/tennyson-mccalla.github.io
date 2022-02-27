@@ -4,9 +4,13 @@
 
 This artifact is almost wholly original though it was definitely inspired by the animal shelter project that incorporated MongoDB database software and Plotly dashboard software.
 
-The idea behind this was to create a better thermostat demo. The TI board (via I2C) delivered temperature information (every 200 ms), the information was put out as an appended row to a CSV file (every 1000 ms), and then in here that last line gets parsed and has its values used for the thermostat display (every 1000 ms). The algorithm here keeps things constantly flowing. See a demonstration of the flow in the video below:
+The idea behind this was to create a better thermostat demo. The [TI board](https://www.ti.com/tool/CC3220SF-LAUNCHXL) (via I2C) delivered temperature information (every 200 ms), the information was put out as an appended row to a [CSV file]({{site.url}}/database_stuff/temps_outfile.csv) (every 1000 ms), and then in here that last line gets parsed and has its values used for the thermostat display (every 1000 ms). The algorithm here keeps things constantly flowing. See a demonstration of the flow in the video below:
 
-![UART -> CSV -> Dash]({{site.url}})
+![UART -> CSV -> Dash]({{site.url}}/media/Screen%20Recording%202022-02-27%20at%2012.02.17.mov)
+
+See that when the 3rd number in the list goes from 0 to 1 it represents "heat" being requested. As a result the wording of the output changes to say, "Heating to" so-and-so ºC, the display will turn red, the text will turn orange, and it will flash until the temperature is reached. The terminal I've left on the default refresh of every 2 seconds so it might seem a bit slow.
+
+The board itself also reflects the change happening. When heat is requested a GPIO connected red LED comes on and will go off when it reaches the requested temperature.
 
 Note that though there is the inclusion and reference to the MongoDB CRUD class "therm_records" apart from creating the initial pandas dataframe it doesn't come into play. It turns out that it was just simpler and faster to grab the needed information directly rather than going through the intermediary of adding that information to a database and then pulling that same information from the database to present here.
 
