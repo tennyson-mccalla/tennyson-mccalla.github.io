@@ -2,17 +2,17 @@
 
 ## Narrative
 
-"People think it's this veneer — that the designers are handed this box and told, 'Make it look good!' That's not what we think design is. It's not just what it looks like and feels like. Design is how it works."
+*"People think it's this veneer — that the designers are handed this box and told, 'Make it look good!' That's not what we think design is. It's not just what it looks like and feels like. Design is how it works."*
 
 By software design I mean how software works and not so much the aesthetics of how the end product of the software looks and feels (though that also has been enhanced).
 
 The enhancement here was for an embedded systems project. The TI [CC3220SF-LAUNCHXL](https://www.ti.com/tool/CC3220SF-LAUNCHXL) offers a development kit with several example programs to give potential developers a feel for what the board can do. The example program that forms a basis for this project is called "gpiointerrupt.c".
 
-This is a C program that initializes and makes available the GPIO connected LEDs and buttons. On top that we've added initialization and use of the I2C interface, the UART interface, and the microsecond precision timers. The I2C peripheral here is acting as a thermometer and feeding sensor derived information to us via a function of the UART (i.e. DISPLAY). With the timers keeping accurate time an algorithm is made that fires off different functions at pre-determined time intervals.
+This is a [C program]({{site.url}}/gpiointerrupt_CC3220SF_LAUNCHXL_nortos_ccs/gpiointerrupt.c) that initializes and makes available the GPIO connected LEDs and buttons. On top that we've added initialization and use of the I2C interface, the UART interface, and the microsecond precision timers. The I2C peripheral here is acting as a thermometer and feeding sensor derived information to us via a function of the UART (i.e. DISPLAY). With the timers keeping accurate time an algorithm is made that fires off different functions at pre-determined time intervals.
 
 Initially the plan for this enhancement was to capture the Celsius scale temperature information and then store the transformations of Celsius to Fahrenheit/Kelvin/ and even Rankine in a database. It turned out that it was easier to just do those conversions on the fly rather than try and store the calculated values in a database or file. While I failed to combine the already enhanced project and the [mongoc](https://mongoc.org) driver I still did change the way that the output was delivered.
 
-Instead of being lost forever after being transmitted over UART the sensor information and variable values are now captured for longterm use and perusal in a file. For some reason the code used to work without all of the calls to DISPLAY I placed in there but it seems that they are now necessary in order for the loop not to get stuck.
+Instead of being lost forever after being transmitted over UART the sensor information and variable values are now captured for longterm use and perusal in a file. For some reason the code used to work without all of the calls to DISPLAY I placed in the mainThread but it seems that they are now necessary in order for the loop not to get stuck. The [CSV file]({{site.url}}/database_stuff/temps_outfile.csv) forms an essential part of the Database artifact.
 
 ```C
 /*
