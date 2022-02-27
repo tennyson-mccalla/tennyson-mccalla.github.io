@@ -14,6 +14,8 @@ The board itself also reflects the change happening. When heat is requested a GP
 
 Note that though there is the inclusion and reference to the MongoDB CRUD class "[therm_records.py]({{site.url}}/database_stuff/therm_records.py)" apart from creating the initial pandas dataframe it doesn't come into play. It turns out that it was just simpler and faster to grab the needed information directly rather than going through the intermediary of adding that information to a database and then pulling that same information from the database to present here.
 
+I can imagine that this project could be easily expanded into an actual thermostat product. The coloration a la [Nest thermostats](https://store.google.com/us/product/nest_learning_thermostat_3rd_gen?hl=en-US), a [night mode](https://dash.plotly.com/dash-daq) could be added, the styles of text could be changed, the thermostat object itself could have the timing changed, machine learning could be added, graphing features could use the MongoDB etc.
+
 ```python
 import os # to seek the end of the file
 import dash # for the app
@@ -42,7 +44,7 @@ def get_last_line():
                 f.seek(-2, os.SEEK_CUR)
         except OSError:
             f.seek(0)
-    last_line = f.readline().decode()
+        last_line = f.readline().decode()
     return last_line
 
 # getting the initial value for the thermostat display
@@ -51,7 +53,7 @@ initVal = get_last_line()
 app = dash.Dash(__name__)
 
 app.layout = html.Div([
-    # ultimately use the DAQ LED Display rather than the thermometer
+    # ultimately used the DAQ LED Display rather than the thermometer
     daq.LEDDisplay(
         id='my-thermostat-1',
         label="Temperature",
@@ -74,7 +76,7 @@ app.layout = html.Div([
 )
 def update_thermostat(n):
     value=get_last_line()
-    return f"{value.strip().split(',')[0]} ºC"
+    return f"{value.strip().split(',')[0]}"
 
 # the function that updates the digits color
 @app.callback(
@@ -83,9 +85,12 @@ def update_thermostat(n):
 )
 def update_temp_col(n):
     heatVal=get_last_line()
-    if heatVal.strip().split(",")[2] == "1":
-        return 'orange'
-    else:
+    try: # added handling for index errors
+        if heatVal.strip().split(",")[2] == "1":
+            return 'orange'
+        else:
+            return 'black'
+    except IndexError:
         return 'black'
 
 # the function that updates the background color
@@ -95,9 +100,12 @@ def update_temp_col(n):
 )
 def update_bg_col(n):
     heatVal=get_last_line()
-    if heatVal.strip().split(",")[2] == "1":
-        return '#FF5E5E'
-    else:
+    try:
+        if heatVal.strip().split(",")[2] == "1":
+            return '#FF5E5E'
+        else:
+            return '#777777'
+    except IndexError:
         return '#777777'
 
 # the function that updates the label
@@ -107,10 +115,13 @@ def update_bg_col(n):
 )
 def update_label(n):
     heatVal=get_last_line()
-    if heatVal.strip().split(",")[2] == "1":
-        return f'Heating to {heatVal.strip().split(",")[1]} ºC'
-    else:
-        return 'Temperature'
+    try:
+        if heatVal.strip().split(",")[2] == "1":
+            return f'Heating to {heatVal.strip().split(",")[1]} ºC'
+        else:
+            return 'Temperature in ºC'
+    except IndeError:
+        return 'Temperature in ºC'
 
 if __name__ == '__main__':
     app.run_server(debug=False)
