@@ -2,11 +2,11 @@
 
 ## Narrative
 
-*"People think it's this veneer — that the designers are handed this box and told, 'Make it look good!' That's not what we think design is. It's not just what it looks like and feels like. Design is how it works."*
+*"People think it's this veneer — that the designers are handed this box and told, 'Make it look good!' That's not what we think design is. It's not just what it looks like and feels like. Design is how it works."* — Steve Jobs
 
 By software design I mean how software works and not so much the aesthetics of how the end product of the software looks and feels (though that also has been enhanced).
 
-The enhancement here was for an embedded systems project. The TI [CC3220SF-LAUNCHXL](https://www.ti.com/tool/CC3220SF-LAUNCHXL) offers a development kit with several example programs to give potential developers a feel for what the board can do. The example program that forms a basis for this project is called "gpiointerrupt.c".
+The enhancement here was for an embedded systems project. The TI [CC3220SF-LAUNCHXL](https://www.ti.com/tool/CC3220SF-LAUNCHXL) offers a development kit with several example programs to give potential developers a feel for what the board can do. The example program that forms a basis for this project is called "gpiointerrupt.c". See the evolution of the project from [gpiointerrupt.c.orig]({{site.url}}/gpiointerrupt_CC3220SF_LAUNCHXL_nortos_ccs/gpiointerrupt.c.orig) to [gpiointerrupt.c.old]({{site.url}}/gpiointerrupt_CC3220SF_LAUNCHXL_nortos_ccs/gpiointerrupt.old) to present.
 
 This is a [C program]({{site.url}}/gpiointerrupt_CC3220SF_LAUNCHXL_nortos_ccs/gpiointerrupt.c) that initializes and makes available the GPIO connected LEDs and buttons. On top that we've added initialization and use of the I2C interface, the UART interface, and the microsecond precision timers. The I2C peripheral here is acting as a thermometer and feeding sensor derived information to us via a function of the UART (i.e. DISPLAY). With the timers keeping accurate time an algorithm is made that fires off different functions at pre-determined time intervals.
 

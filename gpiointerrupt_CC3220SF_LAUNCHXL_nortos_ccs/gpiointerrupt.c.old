@@ -314,10 +314,7 @@ void *mainThread(void *arg0)
 
         // because the timer variable increments every 100 000 microseconds or (100 ms)
         // the appropriate multiples will modulo to 0
-        int s = timer % 2;
-        DISPLAY(snprintf(output, 64, "%d %% 2 = %d\n\r", timer, s))
         if (timer % 2 == 0) {
-            DISPLAY(snprintf(output, 64, "%d %% 2 = %d\n\r", timer, s))
             // This was written to handle the case of restarts while connected
             // not getting the init temperature
             if (timer < 5) {

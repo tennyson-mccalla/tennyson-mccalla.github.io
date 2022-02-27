@@ -16,7 +16,7 @@ Once [the CSV/text]({{site.url}}/database_stuff/temps_outfile.csv) file was big 
 
 ![Show dbs and mongoimport]({{site.url}}/media/Screen%20Shot%202022-02-25%20at%2016.07.18.png)
 
-The other alteration was to customize an old Python pyMongo class for use with this new db/collection/authentication:
+The other alteration was to customize [an old Python pyMongo class]() for use with this new db/collection/authentication (that last one because security is important!):
 
 ## Python Script
 

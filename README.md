@@ -12,7 +12,7 @@ Eventually I ended up using my busted Linux laptop for the majority of the remai
 
 With the help of a friend I managed to temporarily get my hands on relatively recent Windows desktop and that made a world of difference for at least two classes. Given the general exhaustion of working full-time and going to school full-time (and doing well at both of them) that bit of relief was great. But enough personal history.
 
-The capstone project here is a pretty good demonstration of skills. I employed strategies for building collaborative environments that enable diverse audiences to support organizational decision making in the field of computer science by completing the plotly dash app and putting it up here on GitHub. I can imagine lots of different ways the entire project could be enhanced.
+The capstone project here is a pretty good demonstration of skills. I employed strategies for building collaborative environments that enable diverse audiences to support organizational decision making in the field of computer science by completing the plotly dash app and putting it up here on GitHub. I can imagine lots of different ways the entire project could be enhanced. Just as we worked in a collaborative dev team during the course or took on the different roles of stakeholders in agile scrum practice.
 
 I designed, developed, and delivered professional-quality oral, written, and visual communications that are coherent, technically sound, and appropriately adapted to specific audiences and contexts by completing code review videos (one of which I've [linked here](https://youtu.be/lrlpe41CcEw)) and the plotly dash app mentioned above.
 
@@ -21,6 +21,10 @@ I designed and evaluated computing solutions that solve a given problem using al
 I demonstrated an ability to use well-founded and innovative techniques, skills, and tools in computing practices for the purpose of implementing computer solutions that deliver value and accomplish industry-specific goals by completing the embedded systems project which involved working with the C programming language, microsecond precise timers, as well as hardware interfaces like GPIO, I2C, and UART.
 
 And finally I developed a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources by completing the database section of this capstone course where I took advantage of the authentication tools offered by MongoDB.
+
+From the beginning of this class I had in mind a project that would incorporate finals of previous classes (particularly embedded systems and data presentation). I think that what I've done mostly captures that initial thought.
+
+Enjoy!
 
 ## Code Review
 
