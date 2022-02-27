@@ -28,4 +28,6 @@ And finally I developed a security mindset that anticipates adversarial exploits
 
 ## Artifact Enhancements
 
-[Database Enhancement]({{site.url}}/database)
+[Database Enhancement]({{site.url}}/database)<br/>
+[Software Design / Engineering Enhancement]({{site.url}}/softwareDesign)<br/>
+[Data Structures / Algorithms Enhancement]({{site.url}}/dataStructures)
