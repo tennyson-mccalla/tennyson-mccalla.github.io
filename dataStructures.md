@@ -12,7 +12,7 @@ See that when the 3rd number in the list goes from 0 to 1 it represents "heat" b
 
 The board itself also reflects the change happening. When heat is requested a GPIO connected red LED comes on and will go off when it reaches the requested temperature.
 
-Note that though there is the inclusion and reference to the MongoDB CRUD class "therm_records" apart from creating the initial pandas dataframe it doesn't come into play. It turns out that it was just simpler and faster to grab the needed information directly rather than going through the intermediary of adding that information to a database and then pulling that same information from the database to present here.
+Note that though there is the inclusion and reference to the MongoDB CRUD class "[therm_records.py]({{site.url}}/database_stuff/therm_records.py)" apart from creating the initial pandas dataframe it doesn't come into play. It turns out that it was just simpler and faster to grab the needed information directly rather than going through the intermediary of adding that information to a database and then pulling that same information from the database to present here.
 
 ```python
 import os # to seek the end of the file
