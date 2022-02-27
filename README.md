@@ -22,9 +22,10 @@ I demonstrated an ability to use well-founded and innovative techniques, skills,
 
 And finally I developed a security mindset that anticipates adversarial exploits in software architecture and designs to expose potential vulnerabilities, mitigate design flaws, and ensure privacy and enhanced security of data and resources by completing the database section of this capstone course where I took advantage of the authentication tools offered by MongoDB.
 
-Code Review
+## Code Review
 
 [Code Review](https://tennyson-mccalla.github.io/code_review)
 
-Artifact Enhancements
+## Artifact Enhancements
 
+[Database Enhancement]({{site.url}}/database)
